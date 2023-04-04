@@ -55,9 +55,14 @@ class Rectangle:
 
     def __str__(self):
         """prints representation of the rectangle with '#'"""
-        if self.__width == 0 or self.__height == 0:
-            return ""
-        return ((("#" * self.width) + "\n") * self.height)[:-1]
+        total = ""
+        if self.__height == 0 or self.__width == 0:
+            return total
+        for i in range(self.__height):
+            total += (str(self.print_symbol) * self.__width)
+            if i != self.__height - 1:
+                total += "\n"
+        return total
 
     def __repr__(self):
         """return a string representation"""
