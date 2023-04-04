@@ -51,16 +51,11 @@ class Rectangle:
 
     def __str__(self):
         """prints representation of the rectangle with '#'"""
-        string = ""
         if self.__width == 0 or self.__height == 0:
-            return string
-        for i in range(self.__width):
-            for j in range(self.__height):
-                string += '#'
-            if i < (self.__width - 1):
-                string += '\n'
-        return string
+            return ""
+        return ((("#" * self.width) + "\n") * self.height)[:-1]
 
     def __repr__(self):
         """return a string representation"""
-        return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
+        return "Rectangle(" + str(self.__width) + ", " + str(self.__height) +\
+            ")"
