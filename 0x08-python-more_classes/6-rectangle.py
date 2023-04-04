@@ -5,10 +5,13 @@
 class Rectangle:
     """ defines an empty class rectangle """
 
+    number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         """ initializes height and width """
         self.height = height
         self.width = width
+        Rectangle.number_of_instances += 1
 
     @property
     def height(self):
@@ -55,7 +58,17 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return string
         for i in range(self.__width):
-            string += ('#' * self.__height)
+            for j in range(self.__height):
+                string += '#'
             if i < (self.__width - 1):
                 string += '\n'
         return string
+
+    def __repr__(self):
+        """return a string representation"""
+        return f"Rectangle({self.width}, {self.height})"
+
+    def __del__(self):
+        """prints once an instance is deleted"""
+        print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1
