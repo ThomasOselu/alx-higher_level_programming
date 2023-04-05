@@ -53,6 +53,24 @@ class Rectangle:
         else:
             return 2 * (self.__height + self.__width)
 
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        if type(rect_1) is not Rectangle:
+            raise TypeError('rect_1 must be an instance of Rectangle')
+        if type(rect_2) is not Rectangle:
+            raise TypeError('rect_2 must be an instance of Rectangle')
+        if rect_1.area() == rect_2.area():
+            return rect_1
+        elif rect_1.area() >= rect_2.area():
+            return rect_1
+        else:
+            return rect_2
+
+    @classmethod
+    def square(cls, size=0):
+        """returns an object"""
+        return (cls(size, size))
+
     def __str__(self):
         """prints representation of the rectangle with '#'"""
         total = ""
@@ -73,21 +91,3 @@ class Rectangle:
         """prints once an instance is deleted"""
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
-
-    @staticmethod
-    def bigger_or_equal(rect_1, rect_2):
-        if type(rect_1) is not Rectangle:
-            raise TypeError('rect_1 must be an instance of Rectangle')
-        if type(rect_2) is not Rectangle:
-            raise TypeError('rect_2 must be an instance of Rectangle')
-        if rect_1.area() == rect_2.area():
-            return rect_1
-        elif rect_1.area() >= rect_2.area():
-            return rect_1
-        else:
-            return rect_2
-
-    @classmethod
-    def square(cls, size=0):
-        """returns an object"""
-        return (cls(size, size))
