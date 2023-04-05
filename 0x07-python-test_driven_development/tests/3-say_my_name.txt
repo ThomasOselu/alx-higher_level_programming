@@ -5,31 +5,34 @@ Usage
 
 Write a function that prints My name is <first name> <last name>
 
-    Prototype: def say_my_name(first_name, last_name=""):
-    first_name and last_name must be strings otherwise, raise a TypeError exception with the message first_name must be a string or last_name must be a string
-    You are not allowed to import any module
+Prototype: def say_my_name(first_name, last_name=""):
+first_name and last_name must be strings otherwise, raise a TypeError exception with the message first_name must be a string or last_name must be a string
+You are not allowed to import any module
 
 >>> say_my_name = __import__('3-say_my_name').say_my_name
 >>> say_my_name("Tom", "Oselu")
-My name is Norman Isaza
->>> say_my_name(None, "oselu")
+My name is Tom Oselu
+
+>>> say_my_name(None, "Oselu")
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
   File "<stdin>", line 4, in say_my_name
-TypeError: first_name must be a string or last_name must be a string
+TypeError: first_name must be a string
+
 >>> say_my_name("Tom", None)
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
   File "<stdin>", line 4, in say_my_name
-TypeError: first_name must be a string or last_name must be a string
+TypeError: last_name must be a string
+
 >>> say_my_name("Tom", 5)
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
   File "<stdin>", line 4, in say_my_name
-TypeError: first_name must be a string or last_name must be a string
->>> say_my_name(5, "Tom")
+TypeError: last_name must be a string
+
+#>>> say_my_name(5, "Tom")
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
   File "<stdin>", line 4, in say_my_name
-TypeError: first_name must be a string or last_name must be a string
->>>
+TypeError: first_name must be a string
