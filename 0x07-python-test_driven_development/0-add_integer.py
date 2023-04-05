@@ -1,12 +1,14 @@
 #!/usr/bin/python3
-"""a function that adds two integer"""
+"""a module  function that adds two integer,
+after typecasting to int if float
+>>> add_integer(2,5)
+7
+"""
 
 
 def add_integer(a, b=98):
-    """Return the integer addition of a and b.
-    Float arguments are typecasted to ints before addition is performed.
-    Raises:
-        TypeError: If either of a or b is a non-integer and non-float.
+    """Return the integer addition of a and b,type casted if float
+        return int(a) + (b)
     """
     if type(a) != int and type(a) != float:
         raise TypeError('a must be an integer')
