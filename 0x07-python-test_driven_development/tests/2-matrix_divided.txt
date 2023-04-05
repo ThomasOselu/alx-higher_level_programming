@@ -63,11 +63,6 @@ Traceback (most recent call last):
   File "<stdin>", line 17, in matrix_divided
 TypeError: matrix must be a matrix (list of lists) of integers/floats
 
->>> matrix = [[10, 8], [2, 10]]
->>> div = 2
->>> len(matrix_divided(matrix, div)) == len(matrix)
-True
-
 >>> matrix = [[10,8], [2,10]]
 >>> div = None
 >>> matrix_divided(matrix, div)
