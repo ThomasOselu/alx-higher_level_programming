@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-"""a module  function that adds two integer,
-after typecasting to int if float
->>> add_integer(2,5)
-7
+"""a module  function that adds two integer,typecasting to int if float
+args:
+    a: first integer
+    b=98: second integer
 """
 
 
