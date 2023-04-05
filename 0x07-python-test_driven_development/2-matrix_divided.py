@@ -1,10 +1,6 @@
 #!/usr/bin/python3
-"""Defines a matrix division function."""
-
-
-def matrix_divided(matrix, div):
-    """Divide all elements of a matrix.
-    Args:
+"""Defines a matrix division function
+Args:
         matrix (list): A list of lists of ints or floats.
         div (int/float): The divisor.
     Raises:
@@ -14,6 +10,12 @@ def matrix_divided(matrix, div):
         ZeroDivisionError: If div is 0.
     Returns:
         A new matrix representing the result of the division.
+    """
+
+
+def matrix_divided(matrix, div):
+    """this function is used to determine the value
+    when a matrix is divided by a divisor.
     """
     err_msg = "matrix must be a matrix (list of lists) of integers/floats"
     if type(div) != int and type(div) != float:
