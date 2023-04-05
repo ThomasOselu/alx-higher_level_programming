@@ -1,0 +1,80 @@
+How to Use 5-text_indentation.py
+================================
+
+This module defines a text-indentation function ``text_indentation(text)``.
+
+usage
+-----
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation("Hello?")
+Hello?
+<BLANKLINE>
+
+'text is a string'
+>>> text_indentation("Walter: White? Meco.")
+Walter:
+<BLANKLINE>
+White?
+<BLANKLINE>
+Meco.
+<BLANKLINE>
+
+'text is a string with severals blankspaces'
+>>> text_indentation("Walter:		White?            Meco.")
+Walter:
+<BLANKLINE>
+White?
+<BLANKLINE>
+Meco.
+<BLANKLINE>
+
+'text with .:? without balnkspace'
+>>> text_indentation(".:?")
+.
+<BLANKLINE>
+:
+<BLANKLINE>
+?
+<BLANKLINE>
+
+'text is an integer'
+>>> text_indentation(1)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+'text is floating'
+>>> text_indentation(2.8)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+'text is boolean'
+>>> text_indentation(False)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+'text is tuple'
+>>> text_indentation((2, 8))
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+'text is list'
+>>> text_indentation([2, 8])
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+'text is dict'
+>>> text_indentation({2, 8})
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+'text is empty'
+>>> text_indentation()
+Traceback (most recent call last):
+...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
