@@ -31,5 +31,6 @@ def add_item(filename: str, item: List[str]):
 
     save_to_json_file(my_list, filename)
 
+
 if __name__ == "__main__":
     add_item("add_item.json", sys.argv[1:])
