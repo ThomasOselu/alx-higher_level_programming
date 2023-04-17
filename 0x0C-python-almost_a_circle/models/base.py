@@ -5,7 +5,6 @@
 import json
 import os
 import csv
-import turtle
 
 
 class Base:
@@ -108,24 +107,38 @@ class Base:
     def draw(list_rectangles, list_squares):
         """opens a window and draws all the Rectangles and Squares
         """
-        turtle.getscreen()
-        turtle.shape("turtle")
-        for rect in list_rectangles:
-            turtle.pencolor(red)
-            turtle.setpos(rect.x, rect.y)
-            turtle.pendown()
-            for i in range(2):
-                turtle.forward(rect.height)
-                turtle.left(90)
-                turtle.forward(rect.width)
-                turtle.left(90)
-            turtle.penup()
-        for sq in list_squares:
-            turtle.pencolor(blue)
-            turtle.setpos(sq.x, sq.y)
-            turtle.pendown()
-            for i in range(4):
-                turtle.foward(sq.height)
-                turtle.left(90)
-            turtle.penup()
-        turtle.exitonclick()
+        import turtle
+        import time
+        from random import randrange
+
+        t = turtle.Turtle()
+        t.color("beige")
+        turtle.bgcolor("violet")
+        t.shape("square")
+        t.pensize(8)
+
+        for i in (list_rectangles + list_squares):
+            t.penup()
+            t.setpos(0, 0)
+            turtle.Screen().colormode(255)
+            t.pencolor((randrange(255), randrange(255), randrange(255)))
+            Base.draw_rect(t, i)
+            time.sleep(1)
+        time.sleep(5)
+
+    @staticmethod
+    def draw_rect(t, rect):
+        """Helper method that draws a Rectangle
+        or Square.
+        """
+
+        t.penup()
+        t.setpos(rect.x, rect.y)
+        t.pendown()
+        t.forward(rect.width)
+        t.left(90)
+        t.forward(rect.height)
+        t.left(90)
+        t.forward(rect.width)
+        t.left(90)
+        t.forward(rect.height)
